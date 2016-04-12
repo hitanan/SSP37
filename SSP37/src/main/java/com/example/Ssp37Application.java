@@ -14,7 +14,6 @@ public class Ssp37Application {
 		SpringApplication.run(Ssp37Application.class, args);
 	}
 
-	// Add
 	@RequestMapping("/")
 	@ResponseBody
 	public String hello() {
