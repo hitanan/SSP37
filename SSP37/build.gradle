@@ -6,12 +6,14 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
+		classpath 'io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE'	// Add
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'io.spring.dependency-management'	// Add
 apply plugin: 'spring-boot' 
 
 jar {
@@ -25,6 +27,12 @@ repositories {
 	mavenCentral()
 }
 
+// Add
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
+    }
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
