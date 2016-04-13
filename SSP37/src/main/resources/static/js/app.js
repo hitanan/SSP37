@@ -1,5 +1,8 @@
 angular.module('ssp37App', [])
-	.controller('HelloCtrl', function($scope) {
-		$scope.hello = {id: 'xxx', text: 'Hello'}
+	.controller('HelloCtrl', function($http, $scope) {
+		$http.get('/hello')
+		.then(function(response) {
+			 $scope.hello = response.data;
+		 })
 	})
 	;
