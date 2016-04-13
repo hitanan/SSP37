@@ -1,13 +1,15 @@
-<html ng-app>
+<html ng-app="ssp37App"><!-- Change -->
 <head>
 <meta charset="utf-8">
 <title>SSP37</title>
 <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
-		<h1>Check AngularJS</h1>
-		<div>{{'AngularJS'}}</div>
+	<!-- Change -->
+	<div class="container" ng-controller="HelloCtrl">
+		<h1>Check Controller</h1>
+		<p>The ID is {{hello.id}}</p>
+		<p>The text is {{hello.text}}</p>
 	</div>
 	<script src="webjars/jquery/2.2.3/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
