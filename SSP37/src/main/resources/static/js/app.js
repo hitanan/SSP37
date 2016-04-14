@@ -5,7 +5,13 @@ angular.module('ssp37App', ['ui.router'])
             .state('hello', {
                 url: "/hello",
                 templateUrl: "templates/hello.html",
-                controller: "HelloCtrl"
+                controller: "HelloCtrl",
+                // Add
+                resolve: {
+                    helloRsl: function(hello) {
+                        return hello.get();
+                    } 
+                }
             })
             .state('blue', {
                 url: "/blue",
@@ -19,7 +25,6 @@ angular.module('ssp37App', ['ui.router'])
             })
             ;
     })
-    // Add
     .factory('hello', function($http) {
         return {
             get: function() {
@@ -28,16 +33,8 @@ angular.module('ssp37App', ['ui.router'])
         };
     })
     // Change
-    .controller('HelloCtrl', function($scope, hello) {
-        hello.get()
-        .then(function(response) {
-            $scope.hello = response.data
-        })
-        .catch(function(response) {
-            result.status = response.status;
-            result.statusText = response.statusText;
-        })
-        ;
+    .controller('HelloCtrl', function($scope, helloRsl) {
+        $scope.hello = helloRsl.data
     })
     .controller('BlueCtrl', function($scope) {
         $scope.color = "blue"
