@@ -19,15 +19,25 @@ angular.module('ssp37App', ['ui.router'])
             })
             ;
     })
-    .controller('HelloCtrl', function($http, $scope) {
-        $http.get('/helloOrBad?bad=false')
+    // Add
+    .factory('hello', function($http) {
+        return {
+            get: function() {
+                return $http.get('/helloOrBad?bad=false');
+            }
+        };
+    })
+    // Change
+    .controller('HelloCtrl', function($scope, hello) {
+        hello.get()
         .then(function(response) {
-             $scope.hello = response.data;
-         })
-         .catch(function(response) {
-             $scope.status = response.status;
-             $scope.statusText = response.statusText;
-         })
+            $scope.hello = response.data
+        })
+        .catch(function(response) {
+            result.status = response.status;
+            result.statusText = response.statusText;
+        })
+        ;
     })
     .controller('BlueCtrl', function($scope) {
         $scope.color = "blue"
