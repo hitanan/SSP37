@@ -34,9 +34,10 @@ dependencyManagement {
 }
 
 dependencies {
-	// Add
 	compile 'org.webjars:jquery:2.2.3'
 	compile 'org.webjars:angularjs:1.5.3'
+	// Add
+	compile 'org.webjars:angular-ui-router:0.2.18'
 	compile 'org.webjars:bootstrap:3.3.6'
 
 	compile('org.springframework.boot:spring-boot-starter-web')
