@@ -1,5 +1,6 @@
 package com.example;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -21,7 +22,6 @@ public class MyRestController {
 	    return model;
 	}
 
-	// Add
 	@RequestMapping("/helloOrBad")
 	public ResponseEntity<Map<String,Object>> helloOrBad(@RequestParam(required=false) Boolean bad) {
 		if(bad != null && bad) {
@@ -34,5 +34,11 @@ public class MyRestController {
 			return new ResponseEntity<Map<String,Object>>(model, HttpStatus.OK);
 		}
 	}
+
+    // Add
+    @RequestMapping("/user")
+    public Principal user(Principal user) {
+        return user;
+    }
 
 }
