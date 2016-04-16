@@ -62,7 +62,6 @@ angular.module('ssp37App', ['ui.router'])
                     return response;
                 })
                 .catch(function(response) {
-                    self.lastLoginResponse = response
                     self.authenticated = false
                     self.principal = {}
                     return $q.reject(response);
