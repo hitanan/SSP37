@@ -20,25 +20,14 @@ import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
 @SpringBootApplication
-@Controller
 public class Ssp37Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Ssp37Application.class, args);
-    }
-
-    @RequestMapping("/")
-    @ResponseBody
-    public String hello() {
-        return "hello";
-
     }
 
     // Add
