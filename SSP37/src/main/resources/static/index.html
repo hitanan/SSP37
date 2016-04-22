@@ -5,20 +5,23 @@
 <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-	<!-- Change -->
 	<div class="container">
 		<ul class="nav nav-pills" role="tablist">
+			<!-- Add -->
+			<li><a ui-sref="words"	>words</a></li>
 			<li><a ui-sref="hello"	>hello</a></li>
 			<li><a ui-sref="blue"  	>blue</a></li>
 			<li><a ui-sref="green"	>green</a></li>
 		</ul>
 	</div>
-	<!-- Add -->
 	<div ui-view class="container"></div>
 	<script src="webjars/jquery/2.2.3/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="webjars/angularjs/1.5.3/angular.min.js"></script>
 	<!-- Add -->
+	<script src="webjars/angularjs/1.5.3/angular-resource.min.js"></script>
+	<!-- Add -->
+	<script src="webjars/angular-spring-data-rest/0.4.4/dist/angular-spring-data-rest.min.js"></script>
 	<script src="webjars/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 	<script src="js/app.js"></script>
 </body>

@@ -1,0 +1,39 @@
+<h1>Word List</h1>
+<div>
+	<ul>
+		<li ng-repeat="word in processedWords._embeddedItems">
+			<a herf="" ng-click="selectItem(word)">{{word.spelling}}</a>
+			<span ng-show="word.favorite">(Favorite)</span>
+		</li>
+	</ul>
+</div>
+
+<h1>Word Detail</h1>
+<form ng-submit="update(editItem)">
+  <div class="form-group">
+    <label for="spelling">Spelling</label>
+    <input type="text" class="form-control" id="spelling" placeholder="Spelling" ng-model="editItem.spelling">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="editItem.favorite"> Favorite
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="editItem._links == null">Update Word</button>
+  <button type="button" class="btn btn-default" ng-disabled="editItem._links == null" ng-click="delete(editItem)">Delete Word</button>
+</form>
+
+<h1>Word Registry</h1>
+<form ng-submit="save(newItem)">
+  <div class="form-group">
+    <label for="spelling">Spelling</label>
+    <input type="text" class="form-control" id="spelling" placeholder="Spelling" ng-model="newItem.spelling">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="newItem.favorite"> Favorite
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="newItem.spelling.length == 0">Register Word</button>
+</form>
+

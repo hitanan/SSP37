@@ -38,15 +38,14 @@ dependencies {
 	compile 'org.webjars:angularjs:1.5.3'
 	compile 'org.webjars:angular-ui-router:0.2.18'
 	compile 'org.webjars:bootstrap:3.3.6'
+	// Add
+	compile 'org.webjars.bower:angular-spring-data-rest:0.4.4'
 
-	// Add
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	// Add
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	// Add
 	compile('mysql:mysql-connector-java')
 }
 
